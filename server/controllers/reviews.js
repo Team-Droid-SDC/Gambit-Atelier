@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { API_URL } = require('../../config');
+const API_URL = 'http://localhost:8080/';
 
 function averageRatings(ratings) {
   const ratingNums = {};
@@ -19,7 +19,7 @@ function totalRatings(ratings) {
   let total = 0;
   const keys = Object.keys(ratings);
   for (let i = 0; i < keys.length; i++) {
-    total += parseInt(ratings[i], 10) || 0;
+    total += parseInt(ratings[i + 1], 10) || 0;
   }
   return total;
 }
